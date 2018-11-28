@@ -40,4 +40,4 @@ from errors_per_day_view, total_errors;
 
 Sample output:
 
-![alt text](https://raw.githubusercontent.com/yanko20/log_analysis_project/master/path/to/img.png)
+![alt text](https://github.com/yanko20/log_analysis_project/blob/master/sample.png)
