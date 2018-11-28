@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 import psycopg2
 
 conn = psycopg2.connect('dbname=news user=vagrant')
@@ -7,7 +8,7 @@ top_3_articles_query = (
     "select title, num_of_views "
     "from top_articles_view "
     "limit 3;"
-) 
+)
 cur.execute(top_3_articles_query)
 rows = cur.fetchall()
 print 'What are the most popular three articles of all time?'
@@ -29,9 +30,10 @@ for row in rows:
 conn.commit()
 
 errors_query = (
-    "select to_char(day, 'Month DD, YYYY'), round(cast(percent as numeric), 1) "
+    "select to_char(day, 'Month DD, YYYY'), "
+    "round(cast(errors_percent as numeric), 1) "
     "from error_percent_per_day "
-    "order by percent desc;"
+    "order by errors_percent desc;"
 )
 cur.execute(errors_query)
 rows = cur.fetchall()
