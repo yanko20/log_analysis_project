@@ -37,3 +37,7 @@ errors_per_day_view.errors,
 (cast(errors_per_day_view.errors as float)/total_errors.num)*100 as errors_percent
 from errors_per_day_view, total_errors;
 ```
+
+Sample output:
+
+![alt text](https://raw.githubusercontent.com/yanko20/log_analysis_project/master/path/to/img.png)
