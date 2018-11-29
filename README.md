@@ -1,15 +1,15 @@
-Description
+###### Description
 
 Log Analysis Project is an internal reporting tool that provides information about what kind of articles the site's readers like.
 
-How to use this project
+###### How to use this project
 
- - download newsdata.sql (https://d17h27t6h515a5.cloudfront.net/topher/2016/August/57b5f748_newsdata/newsdata.zip)
+ - download newsdata.sql [link](https://d17h27t6h515a5.cloudfront.net/topher/2016/August/57b5f748_newsdata/newsdata.zip)
  - load data `psql -d news -f newsdata.sql`
  - create views specified below using psql in news database
  - run `python log_analysis.py` command
 
-Setup steps if using Vagrant/VirtualBox
+###### Setup steps if using Vagrant/VirtualBox
 
 - brings up your virtual machine `vagrant up`
 - login `vagrant ssh`
@@ -18,7 +18,7 @@ Setup steps if using Vagrant/VirtualBox
 - load data from vagrant direcorty `psql -d news -f newsdata.sql`
 
 
-Create views queries:
+###### Create views queries
 
 ```
 create view top_pages_view as 
@@ -54,6 +54,6 @@ errors_per_day_view.errors,
 from errors_per_day_view, total_errors;
 ```
 
-Sample output:
+###### Sample output
 
 ![alt text](https://github.com/yanko20/log_analysis_project/blob/master/sample.png)
