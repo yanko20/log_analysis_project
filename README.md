@@ -14,7 +14,7 @@ Log Analysis Project is an internal reporting tool that provides information abo
 - brings up your virtual machine `vagrant up`
 - login `vagrant ssh`
 - navigate to vagrant directory `cd /vagrant`
-- follow instructions above
+- follow default instructions above
 
 
 ### Create views queries
