@@ -42,16 +42,15 @@ where status similar to '(3|4|5)%'
 group by day;
 
 
-create view total_errors as 
-select count(status) as num from log where status similar to '(3|4|5)%';
+create view requests_per_day_view as 
+select count(status) as requests, date_trunc('day', time) as day
+from log group by day;
 
 
 create view error_percent_per_day as 
-select 
-errors_per_day_view.day, 
-errors_per_day_view.errors, 
-(cast(errors_per_day_view.errors as float)/total_errors.num)*100 as errors_percent
-from errors_per_day_view, total_errors;
+select r.day, (cast(e.errors as float)/r.requests) * 100 as error_percent 
+from requests_per_day_view as r, errors_per_day_view as e 
+where r.day = e.day;
 ```
 
 Sample output:
